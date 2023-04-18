@@ -115,11 +115,14 @@ checkBrowsers(paths.appPath, isInteractive)
         buildFolder,
         useYarn
       );
+
       compiler.close(err => {
         if (err && err.message) {
           console.log(err.message);
           process.exit(1);
         }
+
+        process.exit(0);
       });
     },
     err => {
